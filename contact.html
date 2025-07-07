@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PhoneHub</title>
+    <meta name="description" content="Get in touch with PhoneHub for customer support, product inquiries, and technical assistance.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-mobile-alt"></i>
+                    PhoneHub
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="cart.html" class="nav-link cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        Cart (<span id="cart-count">0</span>)
+                    </a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 style="text-align: center; margin: 2rem 0; font-size: 2.5rem; color: #2c3e50;">Contact Us</h1>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem;">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2 style="margin-bottom: 2rem; color: #2c3e50;">Get in Touch</h2>
+                    <p style="margin-bottom: 2rem; color: #666; line-height: 1.6;">
+                        Have questions about our products or need technical support? We're here to help! 
+                        Our team of experts is ready to assist you with all your smartphone and accessory needs.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <i class="fas fa-map-marker-alt" style="color: #e74c3c; margin-right: 1rem; font-size: 1.2rem;"></i>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Address</h4>
+                                <p style="color: #666;">123 Technology Street, Bangkok, Thailand 10110</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <i class="fas fa-phone" style="color: #27ae60; margin-right: 1rem; font-size: 1.2rem;"></i>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Phone</h4>
+                                <p style="color: #666;">+66 2 123 4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <i class="fas fa-envelope" style="color: #3498db; margin-right: 1rem; font-size: 1.2rem;"></i>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Email</h4>
+                                <p style="color: #666;">support@phonehub.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <i class="fas fa-clock" style="color: #f39c12; margin-right: 1rem; font-size: 1.2rem;"></i>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Business Hours</h4>
+                                <p style="color: #666;">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem;">
+                        <h3 style="margin-bottom: 1rem; color: #2c3e50;">Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 style="margin-bottom: 2rem; color: #2c3e50;">Send Us a Message</h2>
+                    <form id="contact-form" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; color: #2c3e50; font-weight: 600;">Full Name *</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; color: #2c3e50; font-weight: 600;">Email Address *</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" style="display: block; margin-bottom: 0.5rem; color: #2c3e50; font-weight: 600;">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" style="display: block; margin-bottom: 0.5rem; color: #2c3e50; font-weight: 600;">Subject *</label>
+                            <select id="subject" name="subject" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                                <option value="">Select a subject</option>
+                                <option value="product-inquiry">Product Inquiry</option>
+                                <option value="technical-support">Technical Support</option>
+                                <option value="order-status">Order Status</option>
+                                <option value="warranty-claim">Warranty Claim</option>
+                                <option value="general-inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; color: #2c3e50; font-weight: 600;">Message *</label>
+                            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: 1rem;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div style="margin-top: 4rem;">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">Frequently Asked Questions</h2>
+                <div class="faq-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="faq-item" style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">Do you provide warranty on products?</h3>
+                        <p style="color: #666;">Yes, all our products come with official manufacturer warranty. Smartphones typically have 1-2 year warranty, while accessories have 6-12 months warranty.</p>
+                    </div>
+                    
+                    <div class="faq-item" style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">What payment methods do you accept?</h3>
+                        <p style="color: #666;">We accept all major credit cards, bank transfers, mobile banking, and popular e-wallet services including TrueMoney and PromptPay.</p>
+                    </div>
+                    
+                    <div class="faq-item" style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">How long does shipping take?</h3>
+                        <p style="color: #666;">Standard shipping takes 2-3 business days within Bangkok and 3-5 business days for other provinces. Express shipping is available for next-day delivery.</p>
+                    </div>
+                    
+                    <div class="faq-item" style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">Can I return or exchange products?</h3>
+                        <p style="color: #666;">Yes, we offer 30-day return policy for unopened items in original packaging. Opened items can be exchanged within 7 days if defective.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PhoneHub</h3>
+                    <p>Your trusted partner for premium smartphones and accessories.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PhoneHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Handle contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Validate form
+            if (!name || !email || !subject || !message) {
+                showNotification('Please fill in all required fields', 'error');
+                return;
+            }
+            
+            // Simulate form submission
+            showNotification('Thank you for your message! We will get back to you within 24 hours.', 'success');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
