@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - PhoneHub</title>
+    <meta name="description" content="Browse our complete collection of smartphones and accessories with competitive prices in Thai Baht.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-mobile-alt"></i>
+                    PhoneHub
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="cart.html" class="nav-link cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        Cart (<span id="cart-count">0</span>)
+                    </a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 style="text-align: center; margin: 2rem 0; font-size: 2.5rem; color: #2c3e50;">Our Products</h1>
+            
+            <!-- Search and Filter Section -->
+            <section class="search-filter">
+                <div class="search-filter-container">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search products..." aria-label="Search products">
+                    </div>
+                    <select id="category-filter" class="filter-select" aria-label="Filter by category">
+                        <option value="all">All Categories</option>
+                        <option value="smartphones">Smartphones</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                    <select id="price-filter" class="filter-select" aria-label="Filter by price range">
+                        <option value="all">All Prices</option>
+                        <option value="0-10000">Under ฿10,000</option>
+                        <option value="10000-30000">฿10,000 - ฿30,000</option>
+                        <option value="30000-50000">฿30,000 - ฿50,000</option>
+                        <option value="50000-999999">Above ฿50,000</option>
+                    </select>
+                    <button onclick="showComparison()" class="btn btn-secondary">
+                        <i class="fas fa-balance-scale"></i> Compare (<span id="compare-count">0</span>)
+                    </button>
+                </div>
+            </section>
+
+            <!-- Products Grid -->
+            <section class="products-section">
+                <div class="product-grid" id="products-container">
+                    <!-- Products will be loaded dynamically -->
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading products...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PhoneHub</h3>
+                    <p>Your trusted partner for premium smartphones and accessories.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PhoneHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Update compare count on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const compareCount = document.getElementById('compare-count');
+            if (compareCount) {
+                const compareList = JSON.parse(localStorage.getItem('compareList')) || [];
+                compareCount.textContent = compareList.length;
+            }
+        });
+    </script>
+</body>
+</html>
