@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - PhoneHub</title>
+    <meta name="description" content="Review your selected products and proceed to checkout with secure payment options.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-mobile-alt"></i>
+                    PhoneHub
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="cart.html" class="nav-link cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        Cart (<span id="cart-count">0</span>)
+                    </a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 style="text-align: center; margin: 2rem 0; font-size: 2.5rem; color: #2c3e50;">Shopping Cart</h1>
+            
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-top: 2rem;">
+                <!-- Cart Items -->
+                <div class="cart-section">
+                    <h2 style="margin-bottom: 1rem; color: #2c3e50;">Your Items</h2>
+                    <div id="cart-items">
+                        <!-- Cart items will be loaded dynamically -->
+                        <div class="loading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading cart items...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h2 style="margin-bottom: 1rem; color: #2c3e50;">Order Summary</h2>
+                    <div id="cart-total">
+                        <!-- Total will be calculated dynamically -->
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 10px;">
+                        <h3 style="margin-bottom: 1rem; color: #2c3e50;">Payment Info</h3>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-shield-alt" style="color: #27ae60;"></i>
+                            <span>Secure SSL Encryption</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-truck" style="color: #3498db;"></i>
+                            <span>Free shipping on orders over ฿2,000</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-undo" style="color: #f39c12;"></i>
+                            <span>30-day return policy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Continue Shopping -->
+            <div style="text-align: center; margin: 3rem 0;">
+                <a href="products.html" class="btn btn-secondary" style="margin-right: 1rem;">
+                    <i class="fas fa-arrow-left"></i> Continue Shopping
+                </a>
+                <button onclick="clearCart()" class="btn" style="background: #e74c3c; color: white;">
+                    <i class="fas fa-trash"></i> Clear Cart
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PhoneHub</h3>
+                    <p>Your trusted partner for premium smartphones and accessories.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PhoneHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Clear entire cart
+        function clearCart() {
+            if (confirm('Are you sure you want to clear your cart?')) {
+                cart = [];
+                localStorage.removeItem('cart');
+                updateCartCount();
+                loadCartItems();
+                showNotification('Cart cleared successfully', 'info');
+            }
+        }
+    </script>
+</body>
+</html>
